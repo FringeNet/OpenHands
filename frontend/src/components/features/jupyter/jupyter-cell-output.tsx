@@ -9,11 +9,11 @@ interface JupyterCellOutputProps {
 
 export function JupyterCellOutput({ lines }: JupyterCellOutputProps) {
   return (
-    <div className="rounded-lg bg-gray-800 dark:bg-gray-900 p-2 text-xs flex flex-col">
+    <div className="rounded-lg bg-gray-800 dark:bg-gray-900 p-2 text-xs flex flex-col w-full">
       <div className="mb-1 text-gray-400">STDOUT/STDERR</div>
       <pre
-        className="scrollbar-custom scrollbar-thumb-gray-500 hover:scrollbar-thumb-gray-400 dark:scrollbar-thumb-white/10 dark:hover:scrollbar-thumb-white/20 overflow-auto px-5 min-h-[10vh] max-h-[60vh] flex-1 bg-gray-800"
-        style={{ padding: 0, marginBottom: 0, fontSize: "0.75rem" }}
+        className="scrollbar-custom scrollbar-thumb-gray-500 hover:scrollbar-thumb-gray-400 dark:scrollbar-thumb-white/10 dark:hover:scrollbar-thumb-white/20 overflow-auto px-5 min-h-[10vh] max-h-[60vh] flex-1 bg-gray-800 max-w-full"
+        style={{ padding: 0, marginBottom: 0, fontSize: "0.75rem", whiteSpace: "pre-wrap", wordBreak: "break-word" }}
       >
         {/* display the lines as plaintext or image */}
         {lines.map((line, index) => {

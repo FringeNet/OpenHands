@@ -45,6 +45,9 @@ export function code({
           color: "#e6edf3",
           border: "1px solid #30363d",
           overflow: "auto",
+          maxWidth: "100%",
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-word",
         }}
       >
         <code className={className}>{String(children).replace(/\n$/, "")}</code>
@@ -54,10 +57,12 @@ export function code({
 
   return (
     <SyntaxHighlighter
-      className="rounded-lg"
+      className="rounded-lg max-w-full"
       style={vscDarkPlus}
       language={match?.[1]}
       PreTag="div"
+      wrapLongLines={true}
+      customStyle={{ maxWidth: "100%", whiteSpace: "pre-wrap", wordBreak: "break-word" }}
     >
       {String(children).replace(/\n$/, "")}
     </SyntaxHighlighter>
